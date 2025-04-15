@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Retos con Cartas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li onclick="mostrarSeccion('inicio')">Inicio</li>
+            <li onclick="mostrarSeccion('robar')">Robar Carta</li>
+            <li onclick="mostrarSeccion('retos')">Retos Diarios</li>
+            <li onclick="mostrarSeccion('favoritos')">Favoritos</li>
+            <li onclick="mostrarSeccion('barajas')">Barajas Usadas</li>
+            <li onclick="mostrarSeccion('info')">Información</li>
+        </ul>
+    </nav>
+    <main>
+        <section id="inicio" class="seccion activa">
+            <h1>Bienvenido al Juego de Retos</h1>
+            <p>Roba una carta y descubre un reto especial.</p>
+        </section>
+        <section id="robar" class="seccion">
+            <h2>Robar Carta</h2>
+            <button onclick="robarCarta()">Robar</button>
+            <div id="carta-actual"></div>
+        </section>
+        <section id="retos" class="seccion">
+            <h2>Retos del Día</h2>
+            <div id="retos-dia"></div>
+        </section>
+        <section id="favoritos" class="seccion">
+            <h2>Cartas Favoritas</h2>
+            <div id="lista-favoritos"></div>
+        </section>
+        <section id="barajas" class="seccion">
+            <h2>Barajas Usadas</h2>
+            <div id="historial-barajas"></div>
+        </section>
+        <section id="info" class="seccion">
+            <h2>Sobre este Proyecto</h2>
+            <p>Inspirado en PokeAPI, adaptado para usar la API Deck of Cards.</p>
+        </section>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/retos.js"></script>
+    <script src="js/favoritos.js"></script>
+    <script src="js/lista.js"></script>
+    <script src="js/usuario.js"></script>
+    <script>
+        function mostrarSeccion(id) {
+            document.querySelectorAll('.seccion').forEach(s => s.classList.remove('activa'));
+            document.getElementById(id).classList.add('activa');
+        }
+    </script>
+</body>
+</html>
